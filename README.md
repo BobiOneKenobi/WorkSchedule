@@ -1,6 +1,6 @@
 # WorkSchedule
 
-WorkPulse is a Django web application for managing employees, shifts, leave requests, and company holidays.
+WorkSchedule is a Django web application for managing employees, shifts, leave requests, and company holidays.
 
 ## Technologies
 - Python
