@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Employees{% endblock %}
+{% block content %}
+    <h1>Employees</h1>
+    <a href="{% url 'employee-create' %}">Add Employee</a>
+    {% if employees %}
+        <ul>
+            {% for employee in employees %}
+                <li>
+                    <a href="{% url 'employee-detail' employee.pk %}">
+                        {{ employee.full_name }}
+                    </a>
+                    - {{ employee.job_title }} ({{ employee.department.name }})
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No employees added yet.</p>
+    {% endif %}
+{% endblock %}
