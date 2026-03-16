@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Shift Details{% endblock %}
+{% block content %}
+    <h1>Shift Details</h1>
+    <p><strong>Employee:</strong> {{ shift.employee.full_name }}</p>
+    <p><strong>Date:</strong> {{ shift.date }}</p>
+    <p><strong>Start Time:</strong> {{ shift.start_time }}</p>
+    <p><strong>End Time:</strong> {{ shift.end_time }}</p>
+    <p><strong>Shift Type:</strong> {{ shift.get_shift_type_display }}</p>
+    <p><strong>Required Skills:</strong></p>
+    <ul>
+        {% for skill in shift.skills_required.all %}
+            <li>{{ skill.name }}</li>
+        {% empty %}
+            <li>No specific skills required.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'shift-edit' shift.pk %}">Edit</a>
+    <a href="{% url 'shift-delete' shift.pk %}">Delete</a>
+    <a href="{% url 'shift-list' %}">Back to Shifts</a>
+{% endblock %}

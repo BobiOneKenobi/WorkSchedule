@@ -3,7 +3,6 @@
         <li>
             <a href="{% url 'home' %}">Home</a>
         </li>
-
         <li>
             <a href="{% url 'employee-list' %}">Employees</a>
         </li>
@@ -11,7 +10,10 @@
             <a href="{% url 'employee-create' %}">Add Employee</a>
         </li>
         <li>
-            <a href="#">Shifts</a>
+            <a href="{% url 'shift-list' %}">Shifts</a>
+        </li>
+        <li>
+            <a href="{% url 'shift-create' %}">Add Shift</a>
         </li>
         <li>
             <a href="#">Leave Requests</a>
@@ -19,5 +21,6 @@
         <li>
             <a href="#">Holidays</a>
         </li>
+
     </ul>
 </nav>

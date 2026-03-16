@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Shifts{% endblock %}
+{% block content %}
+    <h1>Shifts</h1>
+    <a href="{% url 'shift-create' %}">Add Shift</a>
+    {% if shifts %}
+        <ul>
+            {% for shift in shifts %}
+                <li>
+                    <a href="{% url 'shift-detail' shift.pk %}">
+                        {{ shift.employee.full_name }} - {{ shift.date }} - {{ shift.shift_type }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No shifts available yet.</p>
+    {% endif %}
+{% endblock %}

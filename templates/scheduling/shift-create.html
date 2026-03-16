@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Add Shift{% endblock %}
+{% block content %}
+    <h1>Add Shift</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Shift</button>
+    </form>
+    <a href="{% url 'shift-list' %}">Cancel</a>
+{% endblock %}

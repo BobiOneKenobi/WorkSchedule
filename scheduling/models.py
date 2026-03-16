@@ -1,8 +1,6 @@
 from django.core.validators import  MinLengthValidator
 from django.db import models
 from django.core.exceptions import ValidationError
-
-
 class Skill(models.Model):
     name = models.CharField(max_length=50,unique=True,validators=[MinLengthValidator(2)])
     class Meta:
