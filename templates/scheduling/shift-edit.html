@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
+
 {% block title %}Edit Shift{% endblock %}
+
 {% block content %}
-    <h1>Edit Shift</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save Changes</button>
-    </form>
-    <a href="{% url 'shift-detail' object.pk %}">Cancel</a>
+    <div class="page-card">
+        <h1>Edit Shift</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save Changes</button>
+        </form>
+
+        <div class="action-links" style="margin-top: 20px;">
+            <a href="{% url 'shift-detail' object.pk %}">Cancel</a>
+        </div>
+    </div>
 {% endblock %}

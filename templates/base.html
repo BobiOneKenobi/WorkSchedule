@@ -3,24 +3,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}WorkSchedule{% endblock %}</title>
-
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<div class="page-container">
     <header>
         {% include 'partials/navbar.html' %}
     </header>
-    <main class="content">
+    <main>
         {% block content %}
         {% endblock %}
     </main>
     <footer>
         {% include 'partials/footer.html' %}
     </footer>
-
-</div>
-
 </body>
 </html>

@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
-{% block title %}
-Home
-{% endblock %}
+
+{% block title %}Home{% endblock %}
+
 {% block content %}
-<h1>WorkSchedule</h1>
-<p>Welcome to the WorkSchedule system.</p>
-<p>This application helps manage employees, shifts, leave requests, and holidays.</p>
-<ul>
-    <li><a href="{% url 'employee-list' %}">View Employees</a></li>
-    <li><a href="{% url 'shift-list' %}">View Shifts</a></li>
-</ul>
+    <div class="page-card">
+        <h1>WorkSchedule</h1>
+        <p>Manage employees, shifts, leave requests, and company holidays in one place.</p>
+
+        <div class="action-links">
+            <a href="{% url 'employee-list' %}">View Employees</a>
+            <a href="{% url 'shift-list' %}">View Shifts</a>
+            <a href="{% url 'leave-list' %}">Leave Requests</a>
+            <a href="{% url 'holiday-list' %}">Holidays</a>
+        </div>
+    </div>
 {% endblock %}

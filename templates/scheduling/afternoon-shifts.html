@@ -1,14 +1,11 @@
 {% extends 'base.html' %}
 {% load custom_filters %}
 
-{% block title %}Shifts{% endblock %}
+{% block title %}Afternoon Shifts{% endblock %}
 
 {% block content %}
     <div class="page-card">
-        <h1>Shifts</h1>
-        <div class="action-links">
-            <a href="{% url 'shift-create' %}">Add Shift</a>
-        </div>
+        <h1>Afternoon Shifts</h1>
 
         {% if shifts %}
             <ul class="data-list">
@@ -17,14 +14,12 @@
                         <a href="{% url 'shift-detail' shift.pk %}">
                             {{ shift.employee|full_name }}
                         </a>
-                        — {{ shift.date }} |
-                        {{ shift.start_time }} to {{ shift.end_time }} |
-                        {{ shift.get_shift_type_display }}
+                        — {{ shift.date }} | {{ shift.start_time }} to {{ shift.end_time }}
                     </li>
                 {% endfor %}
             </ul>
         {% else %}
-            <p>No shifts available yet.</p>
+            <p>No afternoon shifts are available.</p>
         {% endif %}
     </div>
 {% endblock %}

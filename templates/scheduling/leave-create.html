@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 
-{% block title %}Add Shift{% endblock %}
+{% block title %}Add Leave Request{% endblock %}
 
 {% block content %}
     <div class="page-card">
-        <h1>Add Shift</h1>
+        <h1>Add Leave Request</h1>
 
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Create Shift</button>
+            <button type="submit">Create Leave Request</button>
         </form>
 
         <div class="action-links" style="margin-top: 20px;">
-            <a href="{% url 'shift-list' %}">Cancel</a>
+            <a href="{% url 'leave-list' %}">Cancel</a>
         </div>
     </div>
 {% endblock %}

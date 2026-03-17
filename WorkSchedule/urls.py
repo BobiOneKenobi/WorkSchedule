@@ -23,3 +23,4 @@ urlpatterns = [
     path('employees/', include('employees.urls')),
     path('', include('scheduling.urls')),
 ]
+handler404 = 'common.views.custom_404'

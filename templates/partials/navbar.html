@@ -1,26 +1,14 @@
 <nav>
-    <ul style="display:flex; gap:20px; list-style:none; padding:10px; background:#eee;">
-        <li>
-            <a href="{% url 'home' %}">Home</a>
-        </li>
-        <li>
-            <a href="{% url 'employee-list' %}">Employees</a>
-        </li>
-        <li>
-            <a href="{% url 'employee-create' %}">Add Employee</a>
-        </li>
-        <li>
-            <a href="{% url 'shift-list' %}">Shifts</a>
-        </li>
-        <li>
-            <a href="{% url 'shift-create' %}">Add Shift</a>
-        </li>
-        <li>
-            <a href="#">Leave Requests</a>
-        </li>
-        <li>
-            <a href="#">Holidays</a>
-        </li>
-
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'employee-list' %}">Employees</a></li>
+        <li><a href="{% url 'employee-create' %}">Add Employee</a></li>
+        <li><a href="{% url 'shift-list' %}">Shifts</a></li>
+        <li><a href="{% url 'shift-create' %}">Add Shift</a></li>
+        <li><a href="{% url 'leave-list' %}">Leave Requests</a></li>
+        <li><a href="{% url 'holiday-list' %}">Holidays</a></li>
+        <li><a href="{% url 'morning-shifts' %}">Morning</a></li>
+        <li><a href="{% url 'afternoon-shifts' %}">Afternoon</a></li>
+        <li><a href="{% url 'night-shifts' %}">Night</a></li>
     </ul>
 </nav>

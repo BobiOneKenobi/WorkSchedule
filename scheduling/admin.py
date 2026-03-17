@@ -19,10 +19,19 @@ class ShiftAdmin(admin.ModelAdmin):
 
 @admin.register(LeaveRequest)
 class LeaveRequestAdmin(admin.ModelAdmin):
-    list_display = ('employee', 'start_date', 'end_date', 'status')
+    list_display = ('employee', 'start_date', 'end_date', 'status', 'duration_days')
     search_fields = ('employee__first_name', 'employee__last_name', 'reason')
     list_filter = ('status', 'start_date', 'end_date')
     ordering = ('-start_date',)
+    actions = ['mark_as_approved', 'mark_as_rejected']
+
+    @admin.action(description='Mark selected leave requests as approved')
+    def mark_as_approved(self, request, queryset):
+        queryset.update(status='approved')
+
+    @admin.action(description='Mark selected leave requests as rejected')
+    def mark_as_rejected(self, request, queryset):
+        queryset.update(status='rejected')
 
 
 @admin.register(Holiday)
